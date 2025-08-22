@@ -1,4 +1,4 @@
-package Ejercicio_tablero.logica;
+package Tablero;
 
 
 public class Tablero {

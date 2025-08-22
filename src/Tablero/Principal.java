@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Ejercicio_tablero.logica.Interfaz;
+package Tablero;
 
-import Ejercicio_tablero.logica.Tablero;
+import Tablero.Tablero;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,7 +36,7 @@ public Tablero miTablero = new Tablero();
         BotonAñadirLocal = new javax.swing.JToggleButton();
         BotonAñadirVisitante = new javax.swing.JToggleButton();
         BotonRestarVisitante = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        BtnMostrar = new javax.swing.JToggleButton();
         BtnReiniciar = new javax.swing.JToggleButton();
         visitanteValor = new javax.swing.JLabel();
         localValor = new javax.swing.JLabel();
@@ -91,8 +92,13 @@ public Tablero miTablero = new Tablero();
         });
         jPanel1.add(BotonRestarVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 50, 30));
 
-        jToggleButton5.setText("resultado");
-        jPanel1.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 150, -1));
+        BtnMostrar.setText("resultado");
+        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 150, -1));
 
         BtnReiniciar.setText("reiniciar");
         BtnReiniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -171,6 +177,14 @@ public Tablero miTablero = new Tablero();
      update();
     }//GEN-LAST:event_BotonRestarVisitanteActionPerformed
 
+    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
+     miTablero.getLocal();
+     miTablero.getVisitante();
+     String resultado = miTablero.quienGano();
+     
+     JOptionPane.showMessageDialog(this, resultado);
+    }//GEN-LAST:event_BtnMostrarActionPerformed
+
 
     public Tablero update(){
         localValor.setText(""+miTablero.getLocal());
@@ -217,6 +231,7 @@ public Tablero miTablero = new Tablero();
     private javax.swing.JToggleButton BotonAñadirVisitante;
     private javax.swing.JToggleButton BotonRestarLocal;
     private javax.swing.JToggleButton BotonRestarVisitante;
+    private javax.swing.JToggleButton BtnMostrar;
     private javax.swing.JToggleButton BtnReiniciar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel3;
@@ -225,7 +240,6 @@ public Tablero miTablero = new Tablero();
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JLabel localValor;
     private javax.swing.JLabel visitanteValor;
     // End of variables declaration//GEN-END:variables
