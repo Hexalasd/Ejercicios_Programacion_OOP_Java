@@ -43,7 +43,7 @@ public Tablero miTablero = new Tablero();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        ComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -129,9 +129,14 @@ public Tablero miTablero = new Tablero();
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 40, -1));
 
         jLabel6.setText("Tablero");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+        ComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -185,6 +190,10 @@ public Tablero miTablero = new Tablero();
      JOptionPane.showMessageDialog(this, resultado);
     }//GEN-LAST:event_BtnMostrarActionPerformed
 
+    private void ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxActionPerformed
+        
+    }//GEN-LAST:event_ComboBoxActionPerformed
+
 
     public Tablero update(){
         localValor.setText(""+miTablero.getLocal());
@@ -233,7 +242,7 @@ public Tablero miTablero = new Tablero();
     private javax.swing.JToggleButton BotonRestarVisitante;
     private javax.swing.JToggleButton BtnMostrar;
     private javax.swing.JToggleButton BtnReiniciar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> ComboBox;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
